@@ -19,9 +19,11 @@ class MoviesController < ApplicationController
     # was it by title or release date
     when 'title'
       # sort ascending and apply hilite css
-      ordering,@title_header = {:title => :asc}, 'hilite'
+      ordering,@title_header = {:title => :asc}
+      @css_title = 'hilite'
     when 'release_date'
-      ordering,@date_header = {:release_date => :asc}, 'hilite'
+      ordering,@release_date_header = {:release_date => :asc}
+      @css_release_date = 'hilite'
     end
     # pull the all ratings from the active record of `movie.rb`
     @all_ratings = Movie.all_ratings
