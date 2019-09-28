@@ -2,12 +2,13 @@
 %h2
   = link_to 'All Movies', movies_path 
 
--# = form_tag movies_path, :method => :get do
--#   Include:
--#   - @all_ratings.each do |rating|
--#     = rating
--#     = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), id: 'ratings_#{rating}' # check_box_tag(name, value = "1", checked = false, options = {})
--#   = submit_tag 'Refresh'
+= form_tag movies_path, :method => :get do
+  Include:
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), id: 'ratings_#{rating}'
+  = submit_tag 'Refresh', :class => 'btn btn-primary'
+
 
 
 -# HTML element id title_header, when sorting by `title` in active record schema
